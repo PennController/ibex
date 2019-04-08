@@ -2,10 +2,17 @@ PennController.ResetPrefix(null);
 
 PennController(
     
-    newButton("test", "Start reading")      // New Button element named "test" with text "Start reading"
+    newImage("logo", "pcibex-logo.png")     // New Image element named "logo" using the file "pcibex-logo.png"
+        .settings.size(150,200)             // Resize it to 150x200px
+        .print()                            // Show the image on the page
+    ,
+    newButton("Start reading")              // New unnamed element named "start" with text "Start reading"
         .print()                            // Show this element on the page
         .wait()                             // Wait until the button is clicked
-        .remove()                           // Remove the button (after the click has happened)
+        .remove()                           // Remove the button
+    ,
+    getImage("logo")                        // Refer back to the Image element named "logo"
+        .remove()                           // Remove it from the page
     ,
     newText("sentence", "Hello world")      // New Text element named "sentence" with text "Hello world"
         .print()                            // Show this element on the page
